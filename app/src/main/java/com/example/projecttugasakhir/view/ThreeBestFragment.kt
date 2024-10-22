@@ -17,8 +17,6 @@ class ThreeBestFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_three_best, container, false)
         binding = FragmentThreeBestBinding.inflate(inflater, container, false)
         return binding.root
     }

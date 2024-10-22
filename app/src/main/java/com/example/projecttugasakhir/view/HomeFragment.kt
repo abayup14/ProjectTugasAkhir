@@ -14,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import com.example.projecttugasakhir.databinding.FragmentHomeBinding
 
@@ -36,8 +37,6 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_home, container, false)
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -81,15 +80,17 @@ class HomeFragment : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
-            val extras = data?.extras
-            bitmap_img = extras?.get("data") as Bitmap
-            bundleAndNavigateToImageFragment(bitmap_img, BITMAP_IMG_KEY, requireView())
-        } else if (requestCode == REQUEST_LOAD_IMAGE && resultCode == Activity.RESULT_OK) {
-            val selectedImage:Uri? = data?.data
-            selectedImage?.let {
-                bitmap_img = MediaStore.Images.Media.getBitmap(requireActivity().contentResolver, it)
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == REQUEST_IMAGE_CAPTURE) {
+                val extras = data?.extras
+                bitmap_img = extras?.get("data") as Bitmap
                 bundleAndNavigateToImageFragment(bitmap_img, BITMAP_IMG_KEY, requireView())
+            } else if (requestCode == REQUEST_LOAD_IMAGE) {
+                val selectedImage:Uri? = data?.data
+                selectedImage?.let {
+                    bitmap_img = MediaStore.Images.Media.getBitmap(requireActivity().contentResolver, it)
+                    bundleAndNavigateToImageFragment(bitmap_img, BITMAP_IMG_KEY, requireView())
+                }
             }
         }
     }

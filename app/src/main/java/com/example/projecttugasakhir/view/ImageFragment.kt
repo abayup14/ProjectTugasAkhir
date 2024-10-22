@@ -1,16 +1,18 @@
 package com.example.projecttugasakhir.view
 
+import android.app.AlertDialog
 import android.graphics.Bitmap
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.example.projecttugasakhir.databinding.FragmentImageBinding
 
 class ImageFragment : Fragment() {
     private lateinit var binding:FragmentImageBinding
-    private var image:Bitmap? = null
+    private lateinit var bitmap_img:Bitmap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,8 +22,6 @@ class ImageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_gallery, container, false)
         binding = FragmentImageBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -30,8 +30,20 @@ class ImageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         if (arguments != null) {
             val bundle_img = ImageFragmentArgs.fromBundle(requireArguments()).img
-            image = bundle_img.getParcelable(HomeFragment.BITMAP_IMG_KEY)!!
-            binding.imgSelect.setImageBitmap(image)
+            bitmap_img = bundle_img.getParcelable(HomeFragment.BITMAP_IMG_KEY)!!
+            binding.imgSelect.setImageBitmap(bitmap_img)
         }
+
+        binding.btnSelect.setOnClickListener {
+            val alert = AlertDialog.Builder(requireContext())
+            bundleAndNavigateToResultFragment(bitmap_img, HomeFragment.BITMAP_IMG_KEY, requireView())
+        }
+    }
+
+    private fun bundleAndNavigateToResultFragment(bitmap_img:Bitmap, key_name:String, view:View) {
+        val bundle = Bundle()
+        bundle.putParcelable(key_name, bitmap_img)
+        val action = ImageFragmentDirections.actionResult(bundle)
+        Navigation.findNavController(view).navigate(action)
     }
 }

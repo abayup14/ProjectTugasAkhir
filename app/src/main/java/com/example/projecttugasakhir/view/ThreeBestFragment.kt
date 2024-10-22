@@ -1,14 +1,14 @@
-package com.example.projecttugasakhir
+package com.example.projecttugasakhir.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.projecttugasakhir.databinding.FragmentResultBinding
+import com.example.projecttugasakhir.databinding.FragmentThreeBestBinding
 
-class ResultFragment : Fragment() {
-    private lateinit var binding:FragmentResultBinding
+class ThreeBestFragment : Fragment() {
+    private lateinit var binding:FragmentThreeBestBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -18,8 +18,8 @@ class ResultFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_result, container, false)
-        binding = FragmentResultBinding.inflate(inflater, container, false)
+//        return inflater.inflate(R.layout.fragment_three_best, container, false)
+        binding = FragmentThreeBestBinding.inflate(inflater, container, false)
         return binding.root
     }
 }

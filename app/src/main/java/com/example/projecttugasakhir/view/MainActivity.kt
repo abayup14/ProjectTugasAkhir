@@ -1,4 +1,4 @@
-package com.example.projecttugasakhir
+package com.example.projecttugasakhir.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

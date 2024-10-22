@@ -11,6 +11,7 @@ import com.example.projecttugasakhir.databinding.FragmentImageBinding
 
 class ImageFragment : Fragment() {
     private lateinit var binding:FragmentImageBinding
+    private var image:Bitmap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +32,7 @@ class ImageFragment : Fragment() {
         if (arguments != null) {
             arguments?.let {
                 val bundle_img = ImageFragmentArgs.fromBundle(requireArguments()).img
-                val image = bundle_img.getParcelable<Bitmap>("bitmap_img")
+                image = bundle_img.getParcelable("bitmap_img")!!
                 binding.imgSelect.setImageBitmap(image)
             }
         }

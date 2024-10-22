@@ -37,5 +37,17 @@
         <action
             android:id="@+id/actionHome"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/actionThreeBest"
+            app:destination="@id/threeBestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/threeBestFragment"
+        android:name="com.example.projecttugasakhir.ThreeBestFragment"
+        android:label="fragment_three_best"
+        tools:layout="@layout/fragment_three_best" >
+        <action
+            android:id="@+id/actionBackToResult"
+            app:destination="@id/resultFragment" />
     </fragment>
 </navigation>

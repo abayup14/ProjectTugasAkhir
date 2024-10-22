@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.projecttugasakhir.HomeFragment"
+        android:name="com.example.projecttugasakhir.view.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/imageFragment"
-        android:name="com.example.projecttugasakhir.ImageFragment"
+        android:name="com.example.projecttugasakhir.view.ImageFragment"
         android:label="fragment_gallery"
         tools:layout="@layout/fragment_image">
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.example.projecttugasakhir.ResultFragment"
+        android:name="com.example.projecttugasakhir.view.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" >
         <argument
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/threeBestFragment"
-        android:name="com.example.projecttugasakhir.ThreeBestFragment"
+        android:name="com.example.projecttugasakhir.view.ThreeBestFragment"
         android:label="fragment_three_best"
         tools:layout="@layout/fragment_three_best" >
         <action

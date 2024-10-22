@@ -1,4 +1,4 @@
-package com.example.projecttugasakhir.view
+package com.example.projecttugasakhir
 
 import android.Manifest
 import android.app.Activity
@@ -14,7 +14,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import com.example.projecttugasakhir.databinding.FragmentHomeBinding
 

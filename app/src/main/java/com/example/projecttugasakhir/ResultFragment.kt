@@ -1,4 +1,4 @@
-package com.example.projecttugasakhir.view
+package com.example.projecttugasakhir
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

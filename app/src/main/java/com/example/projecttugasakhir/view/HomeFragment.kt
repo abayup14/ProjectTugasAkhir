@@ -24,17 +24,11 @@ class HomeFragment : Fragment() {
     private val REQUEST_IMAGE_CAPTURE = 1
     private val REQUEST_LOAD_IMAGE = 2
     private val REQUEST_PERMISSION_CAMERA = 100
-    private val REQUEST_WRITE_STORAGE = 200
-    private val REQUEST_READ_STORAGE = 300
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (!checkCameraPermission()) {
             ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.CAMERA), REQUEST_PERMISSION_CAMERA)
-        }
-        if (!checkStoragePermission()) {
-            ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), REQUEST_WRITE_STORAGE)
-            ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), REQUEST_READ_STORAGE)
         }
     }
 
@@ -72,15 +66,6 @@ class HomeFragment : Fragment() {
 
     private fun checkCameraPermission(): Boolean {
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
-            return true
-        } else {
-            return false
-        }
-    }
-
-    private fun checkStoragePermission(): Boolean {
-        if ((ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED)
-            && ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
             return true
         } else {
             return false

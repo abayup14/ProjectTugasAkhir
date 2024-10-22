@@ -29,11 +29,9 @@ class ImageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (arguments != null) {
-            arguments?.let {
-                val bundle_img = ImageFragmentArgs.fromBundle(requireArguments()).img
-                image = bundle_img.getParcelable("bitmap_img")!!
-                binding.imgSelect.setImageBitmap(image)
-            }
+            val bundle_img = ImageFragmentArgs.fromBundle(requireArguments()).img
+            image = bundle_img.getParcelable("bitmap_img")!!
+            binding.imgSelect.setImageBitmap(image)
         }
     }
 }

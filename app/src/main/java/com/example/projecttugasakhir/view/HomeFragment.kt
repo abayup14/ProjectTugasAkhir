@@ -87,25 +87,26 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun bundleAndNavigateToImageFragment(bitmap_img:Bitmap, key_name:String, view:View) {
+        val bundle = Bundle()
+        bundle.putParcelable(key_name, bitmap_img)
+        val action = HomeFragmentDirections.actionImage(bundle)
+        Navigation.findNavController(view).navigate(action)
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
             val extras = data?.extras
             bitmap_img = extras?.get("data") as Bitmap
 
-            val bundle = Bundle()
-            bundle.putParcelable("bitmap_img", bitmap_img)
-            val actionResult = HomeFragmentDirections.actionImage(bundle)
-            Navigation.findNavController(requireView()).navigate(actionResult)
+            bundleAndNavigateToImageFragment(bitmap_img, "bitmap_img", requireView())
         } else if (requestCode == REQUEST_LOAD_IMAGE && resultCode == Activity.RESULT_OK) {
             val selectedImage:Uri? = data?.data
             selectedImage?.let {
                 bitmap_img = MediaStore.Images.Media.getBitmap(requireActivity().contentResolver, it)
 
-                val bundle = Bundle()
-                bundle.putParcelable("bitmap_img", bitmap_img)
-                val actionResult = HomeFragmentDirections.actionImage(bundle)
-                Navigation.findNavController(requireView()).navigate(actionResult)
+                bundleAndNavigateToImageFragment(bitmap_img, "bitmap_img", requireView())
             }
         }
     }

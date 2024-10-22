@@ -30,7 +30,7 @@ class ImageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         if (arguments != null) {
             val bundle_img = ImageFragmentArgs.fromBundle(requireArguments()).img
-            image = bundle_img.getParcelable("bitmap_img")!!
+            image = bundle_img.getParcelable(HomeFragment.BITMAP_IMG_KEY)!!
             binding.imgSelect.setImageBitmap(image)
         }
     }

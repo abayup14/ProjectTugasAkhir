@@ -24,7 +24,7 @@
             app:destination="@id/resultFragment" />
         <argument
             android:name="img"
-            app:argType="android.os.Bundle" />
+            app:argType="android.graphics.Bitmap" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
@@ -33,7 +33,7 @@
         tools:layout="@layout/fragment_result" >
         <argument
             android:name="img"
-            app:argType="android.os.Bundle" />
+            app:argType="android.graphics.Bitmap" />
         <action
             android:id="@+id/actionHome"
             app:destination="@id/homeFragment" />

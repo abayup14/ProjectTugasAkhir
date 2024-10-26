@@ -1,0 +1,56 @@
+[
+    {
+        "index": 0,
+        "nama": "Ayam Goreng",
+        "bahan": "Description for Label 1",
+        "resep": "Another description for Label 1"
+    },
+    {
+        "index": 1,
+        "nama": "Ayam Pop",
+        "bahan": "Description for Label 2",
+        "resep": "Another description for Label 2"
+    },
+    {
+        "index": 2,
+        "nama": "Rendang",
+        "bahan": "Description for Label 3",
+        "resep": "Another description for Label 3"
+    },
+    {
+        "index": 3,
+        "nama": "Dendeng Batokok",
+        "bahan": "Description for Label 1",
+        "resep": "Another description for Label 1"
+    },
+    {
+        "index": 4,
+        "nama": "Gulai Ikan",
+        "bahan": "Description for Label 2",
+        "resep": "Another description for Label 2"
+    },
+    {
+        "index": 5,
+        "nama": "Gulai Tambusu",
+        "bahan": "Description for Label 3",
+        "resep": "Another description for Label 3"
+    },{
+        "index": 6,
+        "nama": "Gulai Tunjang",
+        "bahan": "Description for Label 1",
+        "resep": "Another description for Label 1"
+    },
+    {
+        "index": 7,
+        "nama": "Telor Balado",
+        "bahan": "Description for Label 2",
+        "resep": "Another description for Label 2"
+    },
+    {
+        "index": 8,
+        "nama": "Telor Dadar",
+        "bahan": "Description for Label 3",
+        "resep": "Another description for Label 3"
+    }
+]
+

@@ -1,6 +1,7 @@
 package com.example.projecttugasakhir
 
 import android.app.AlertDialog
+import android.content.DialogInterface
 import android.graphics.Bitmap
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -29,21 +30,27 @@ class ImageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (arguments != null) {
-            val bundle_img = ImageFragmentArgs.fromBundle(requireArguments()).img
-            bitmap_img = bundle_img.getParcelable(HomeFragment.BITMAP_IMG_KEY)!!
+            bitmap_img = ImageFragmentArgs.fromBundle(requireArguments()).img
             binding.imgSelect.setImageBitmap(bitmap_img)
         }
 
         binding.btnSelect.setOnClickListener {
             val alert = AlertDialog.Builder(requireContext())
-            bundleAndNavigateToResultFragment(bitmap_img, HomeFragment.BITMAP_IMG_KEY, requireView())
+            alert.setTitle("Konfirmasi Foto")
+            alert.setMessage("Apakah ini foto yang ingin digunakan untuk prediksi?")
+            alert.setPositiveButton("GUNAKAN", DialogInterface.OnClickListener { dialog, which ->
+                navigateToResultFragment(bitmap_img, requireView())
+            })
+            alert.setNegativeButton("TIDAK", DialogInterface.OnClickListener { dialog, which ->
+                null
+            })
+
+            alert.create().show()
         }
     }
 
-    private fun bundleAndNavigateToResultFragment(bitmap_img:Bitmap, key_name:String, view:View) {
-        val bundle = Bundle()
-        bundle.putParcelable(key_name, bitmap_img)
-        val action = ImageFragmentDirections.actionResult(bundle)
+    private fun navigateToResultFragment(bitmap_img:Bitmap, view:View) {
+        val action = ImageFragmentDirections.actionResult(bitmap_img)
         Navigation.findNavController(view).navigate(action)
     }
 }

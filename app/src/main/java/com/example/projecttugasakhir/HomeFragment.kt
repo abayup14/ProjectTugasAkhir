@@ -24,11 +24,16 @@ class HomeFragment : Fragment() {
     private val REQUEST_IMAGE_CAPTURE = 1
     private val REQUEST_LOAD_IMAGE = 2
     private val REQUEST_PERMISSION_CAMERA = 100
+    private val REQUEST_READ_EXTERNAL = 101
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (!checkCameraPermission()) {
             ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.CAMERA), REQUEST_PERMISSION_CAMERA)
+        }
+
+        if (!checkStoragePermission()) {
+            ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), REQUEST_READ_EXTERNAL)
         }
     }
 
@@ -70,10 +75,16 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun bundleAndNavigateToImageFragment(bitmap_img:Bitmap, key_name:String, view:View) {
-        val bundle = Bundle()
-        bundle.putParcelable(key_name, bitmap_img)
-        val action = HomeFragmentDirections.actionImage(bundle)
+    private fun checkStoragePermission(): Boolean {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    private fun navigateToImageFragment(bitmap_img:Bitmap, view:View) {
+        val action = HomeFragmentDirections.actionImage(bitmap_img)
         Navigation.findNavController(view).navigate(action)
     }
 
@@ -83,18 +94,14 @@ class HomeFragment : Fragment() {
             if (requestCode == REQUEST_IMAGE_CAPTURE) {
                 val extras = data?.extras
                 bitmap_img = extras?.get("data") as Bitmap
-                bundleAndNavigateToImageFragment(bitmap_img, BITMAP_IMG_KEY, requireView())
+                navigateToImageFragment(bitmap_img, requireView())
             } else if (requestCode == REQUEST_LOAD_IMAGE) {
                 val selectedImage:Uri? = data?.data
                 selectedImage?.let {
                     bitmap_img = MediaStore.Images.Media.getBitmap(requireActivity().contentResolver, it)
-                    bundleAndNavigateToImageFragment(bitmap_img, BITMAP_IMG_KEY, requireView())
+                    navigateToImageFragment(bitmap_img, requireView())
                 }
             }
         }
-    }
-
-    companion object {
-        val BITMAP_IMG_KEY = "bitmap_img"
     }
 }

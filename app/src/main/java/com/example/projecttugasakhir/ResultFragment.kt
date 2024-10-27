@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.example.projecttugasakhir.databinding.FragmentResultBinding
 import com.example.projecttugasakhir.ml.ModelPadang
 import com.google.gson.Gson
@@ -43,10 +44,21 @@ class ResultFragment : Fragment() {
         if (arguments != null) {
             bitmap_img = ResultFragmentArgs.fromBundle(requireArguments()).img
             binding.imgFood.setImageBitmap(bitmap_img)
+//            Log.d("ResultFragment", "Bitmap image received: ${bitmap_img.width}x${bitmap_img.height}")
+        }
 
-            Log.d("ResultFragment", "Bitmap image received: ${bitmap_img.width}x${bitmap_img.height}")
+        val array_prediction = classifyImage(bitmap_img)
 
-            classifyImage(bitmap_img)
+        val maxIndex = array_prediction.indices.maxByOrNull { array_prediction[it] } ?: -1
+        if (maxIndex >= 0) {
+            val predictedLabel = labels[maxIndex]
+            binding.txtNamaMakanan.text = predictedLabel.nama
+            Log.d("ResultFragment", "Predicted label: ${predictedLabel.nama}")
+        }
+
+        binding.btnThreeBest.setOnClickListener {
+            val action = ResultFragmentDirections.actionThreeBest(array_prediction)
+            Navigation.findNavController(requireView()).navigate(action)
         }
     }
 
@@ -61,7 +73,7 @@ class ResultFragment : Fragment() {
         Log.d("ResultFragment", "Loaded labels: $labels")
     }
 
-    private fun classifyImage(bitmap_img:Bitmap) {
+    private fun classifyImage(bitmap_img:Bitmap): FloatArray {
         val model = ModelPadang.newInstance(requireContext())
 
         val byteBuffer = convertBitmapToByteBuffer(bitmap_img)
@@ -73,25 +85,15 @@ class ResultFragment : Fragment() {
         val outputs = model.process(inputFeature0)
         val outputFeature0 = outputs.outputFeature0AsTensorBuffer
 
-
         val outputArray = outputFeature0.floatArray
         Log.d("ResultFragment", "Model output: ${outputArray.contentToString()}")
 
-        val labelIndex = outputFeature0.getIntValue(0)
-        val predictedLabel = labels[labelIndex]
+//        val labelIndex = outputFeature0.getIntValue(0)
+//        val predictedLabel = labels[labelIndex]
 
-
-        binding.txtNamaMakanan.text = predictedLabel.nama
-
-        val maxIndex = outputArray.indices.maxByOrNull { outputArray[it] } ?: -1
-        if (maxIndex >= 0) {
-            val predictedLabel = labels[maxIndex]
-            binding.txtNamaMakanan.text = predictedLabel.nama
-            Log.d("ResultFragment", "Predicted label: ${predictedLabel.nama}")
-        }
-
-        // Release the model resources
         model.close()
+
+        return outputArray
     }
 
     private fun convertBitmapToByteBuffer(bitmap_img: Bitmap): ByteBuffer {

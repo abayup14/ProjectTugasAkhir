@@ -49,5 +49,8 @@
         <action
             android:id="@+id/actionBackToResult"
             app:destination="@id/resultFragment" />
+        <argument
+            android:name="array_predict"
+            app:argType="float[]" />
     </fragment>
 </navigation>

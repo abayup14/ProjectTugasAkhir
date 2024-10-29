@@ -1,5 +1,7 @@
 package com.example.projecttugasakhir
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.util.Log
@@ -53,12 +55,20 @@ class ResultFragment : Fragment() {
         if (maxIndex >= 0) {
             val predictedLabel = labels[maxIndex]
             binding.txtNamaMakanan.text = predictedLabel.nama
+            binding.txtBahanMakanan.text = predictedLabel.bahan
+            binding.txtResepMakanan.text = predictedLabel.resep
             Log.d("ResultFragment", "Predicted label: ${predictedLabel.nama}")
         }
 
         binding.btnThreeBest.setOnClickListener {
-            val action = ResultFragmentDirections.actionThreeBest(array_prediction)
-            Navigation.findNavController(requireView()).navigate(action)
+            val alertPrediksi = AlertDialog.Builder(requireContext())
+            alertPrediksi.setTitle("3 Prediksi Tertinggi")
+            alertPrediksi.setMessage("")
+            alertPrediksi.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
+                null
+            })
+
+            alertPrediksi.create().show()
         }
     }
 

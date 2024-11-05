@@ -46,7 +46,6 @@ class ResultFragment : Fragment() {
         if (arguments != null) {
             bitmap_img = ResultFragmentArgs.fromBundle(requireArguments()).img
             binding.imgFood.setImageBitmap(bitmap_img)
-//            Log.d("ResultFragment", "Bitmap image received: ${bitmap_img.width}x${bitmap_img.height}")
         }
 
         val array_prediction = classifyImage(bitmap_img)
@@ -61,15 +60,31 @@ class ResultFragment : Fragment() {
         }
 
         binding.btnThreeBest.setOnClickListener {
+            val sortedArray = sortAndTake3Best(array_prediction)
+            var msg = ""
+            for ((index, value) in sortedArray) {
+                val nama = labels[index].nama
+                val conf = value * 100.0
+                msg += "$nama - ${String.format("%.2f", conf)}%\n"
+            }
             val alertPrediksi = AlertDialog.Builder(requireContext())
             alertPrediksi.setTitle("3 Prediksi Tertinggi")
-            alertPrediksi.setMessage("")
+            alertPrediksi.setMessage(msg)
             alertPrediksi.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
                 null
             })
 
             alertPrediksi.create().show()
         }
+    }
+
+    private fun sortAndTake3Best(array:FloatArray): List<Pair<Int, Float>> {
+        val sortedArray = array
+            .mapIndexed { index, fl -> index to fl }
+            .sortedByDescending { it.second }
+            .take(3)
+
+        return sortedArray
     }
 
     private fun loadData() {
@@ -87,7 +102,6 @@ class ResultFragment : Fragment() {
         val model = ModelPadang.newInstance(requireContext())
 
         val byteBuffer = convertBitmapToByteBuffer(bitmap_img)
-        Log.d("ResultFragment", "ByteBuffer size: ${byteBuffer.capacity()}")
 
         val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.FLOAT32)
         inputFeature0.loadBuffer(byteBuffer)
@@ -97,9 +111,6 @@ class ResultFragment : Fragment() {
 
         val outputArray = outputFeature0.floatArray
         Log.d("ResultFragment", "Model output: ${outputArray.contentToString()}")
-
-//        val labelIndex = outputFeature0.getIntValue(0)
-//        val predictedLabel = labels[labelIndex]
 
         model.close()
 
@@ -124,10 +135,6 @@ class ResultFragment : Fragment() {
                 byteBuffer.putFloat(r)
                 byteBuffer.putFloat(g)
                 byteBuffer.putFloat(b)
-
-                if (x < 5 && y < 5) {
-                    Log.d("ResultFragment", "Pixel[$x,$y] - R: $r, G: $g, B: $b")
-                }
             }
         }
 

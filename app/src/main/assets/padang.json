@@ -2,55 +2,64 @@
     {
         "index": 0,
         "nama": "Ayam Goreng",
-        "bahan": "Description for Label 1",
-        "resep": "Another description for Label 1"
+        "foto": "ayam_goreng",
+        "bahan": "1 ekor ayam\n1 buah jeruk nipis\n100 g lengkuas muda, parut kasar\n1 batang serai, memarkan\n2 lembar daun salam\n3 lembar daun jeruk\n1 sdm kaldu jamur\nminyak goreng\n7 siung bawang putih\n5 butir bawang merah\n1 cm jahe\n2 cm kunyit\n1 sdt ketumbar\n3 butir kemiri\n1 sdt garam\n",
+        "resep": "Cuci bersih ayam lalu lumuri dengan air jeruk nipis hingga rata. Sisihkan.\nBumbu Halus: Giling semua bahan bumbu hingga halus.\nTaruh ayam dalam panci, beri Bumbu Halus, air secukupnya dan lengkuas parut.\nTambahkan serai, daun jeruk, daun salam dan kaldu jamur.\nMasak sampai ayam empuk dan air rebusan menyusut, tinggal sedikit. Angkat. Sisihkan remahan bumbunya.\nPanaskan minyak goreng banyak dalam wajan dengan api sedang.\nGoreng ayam sampai kuning garing, angkat dan tiriskan.\nGoreng sisa bumbu lengkuasnya sampai garing. Angkat dan tiriskan.\nSajikan ayam goreng dan taburi bumbu remahannya."
     },
     {
         "index": 1,
         "nama": "Ayam Pop",
-        "bahan": "Description for Label 2",
-        "resep": "Another description for Label 2"
+        "foto": "ayam_pop",
+        "bahan": "1 ekor ayam\n750 ml air kelapa\n2 cm jahe, memarkan\n2 cm lengkuas, memarkan\n2 lembar daun jeruk\n2 lembar daun salam\n1 batang serai, memarkan\nBumbu, haluskan:\n5 siung bawang putih\n3 butir bawang merah\n3 butir kemiri\n2 sdt gula pasir\n2 sdt garam\nSambal:\n2 buah tomat merah\n5 buah cabe merah besar, buang bijinya\n3 butir bawang merah\n2 butir bawang putih\n1 sdt gula pasir\n1 sdt garam\nPelengkap:\n250 g daun singkong muda\n500 ml air\n1 sdt soda kue",
+        "resep": "Kulit ayam bisa dikupas jika suka ayam tak terlalu berlemak. Cuci bersih dan tiriskan.\nDidihkan air kelapa bersama daun salam, daun jeruk, serai, lengkuas dan jahe serta Bumbu Halus.\nMasukkan potongan ayam, tutup panci. Masak hingga daging ayam lunak dan air habis.\nAngkat dan tiriskan ayam hingga tidak berair sama sekali.\nPanaskan minyak banyak di atas api sedang. Masukkan potongan ayam, goreng sebentar, jangan sampai kuning.\nAngkat selagi ayam masih putih dan tiriskan.\nSambal: Kukus tomat bersama cabe merah, bawang merah dan bawang putih hingga lunak.\nAngkat dan haluskan bersama gula dan garam.\nTumis Sambal dengan minyak hingga mendidih lalu angkat.\nPelengkap:\nDidihkan air bersama garam dan soda kue. Rebus daun singkong hingga empuk. Angkat dan tiriskan.Sajikan ayam bersama Sambal dan Pelengkapnya."
     },
     {
         "index": 2,
         "nama": "Rendang",
-        "bahan": "Description for Label 3",
-        "resep": "Another description for Label 3"
+        "foto": "daging_rendang",
+        "bahan": "1 kg daging sapi\n3 butir kelapa, diambil santan kental dan santan encernya\n4 lembar daun jeruk\n3 batang serai, memarkan\n4 butir asam kandis\n100ml minyak goreng\n5 gram garam\nBumbu rendang daging sapi 1 Kg:\n\n60 gram bawang merah\n50 gram bawangputih\n250 gram cabai merah besar\n100 gram lengkuas\n50 gram kemiri\n2 gram cengkeh",
+        "resep": "Haluskan semua bahan Bumbu dengan diulek atau diblender.\nTumis bumbu dengan sedikit minyak goreng hingga wangi.\nMasukkan batang serai, daun jeruk, asam kandis dan garam, aduk rata.\nTuangi santan dan dididihkan, masukkan daging.\nMasak dengan api kecil selama beberapa jam sampai daging empuk dan bumbu kecoklatan sesuai selera."
     },
     {
         "index": 3,
         "nama": "Dendeng Batokok",
-        "bahan": "Description for Label 1",
-        "resep": "Another description for Label 1"
+        "foto": "dendeng_batokok",
+        "bahan": "500 g daging has sapi\n3 siung bawang putih, parut\n1/2 sdt merica bubuk\n1 sdt garam\nminyak goreng\nSambal Cabe Ijo:\n100 g cabe hijau besar\n5 buah cabe hijau keriting\n5 butir bawang merah\n2 siung bawang putih\n4 sdm minyak sayur\n2 sdm air jeruk nipis\n2 lembar daun jeruk purut\n1/2 sdt gula pasir\n1 sdt garam",
+        "resep": "Didihkan air dalam panci, masukkan daging sapi, bawang putih, merica dan garam. Masak dengan api kecil hingga daging sapi empuk dan kuah menyusut.\nAngkat daging sapi, iris melintang 1/2 cm. Pukul-pukul dengan pemukul daging hingga pipih.\nGoreng daging dalam minyak panas hingga kecokelatan dan agak kering. Angkat dan tiriskan.\nSambal Cabe Ijo: Tumbuk kasar cabe hijau, bawang merah dan bawang putih.\nPanaskan minyak, tumis cabe hijau, bawang merah dan bawang putih hingga layu dan harum.\nTambahkan daun jeruk, air jeruk, garam, gula dan aduk hingga tercampur rata dan matang. Angkat.\nTaruh dendeng di piring saji, siram sambal cabe ijo, sajikan hangat."
     },
     {
         "index": 4,
         "nama": "Gulai Ikan",
-        "bahan": "Description for Label 2",
-        "resep": "Another description for Label 2"
+        "foto": "gulai_ikan",
+        "bahan": "4 ekor ikan mas ukuran sedang\n1 buah jeruk nipis\n4 sdm minyak sayur\n1 liter santan sedang\n10 buah cabai rawit hijau\n1 lembar daun kunyit\n2 lembar daun jeruk\n1 lembar daun salam\n1 batang serai, memarkan\n2 buah asam kandis\nHaluskan:\n5 siung bawang putih\n6 butir bawang meraj\n4 cm kunyit\n1 cm jahe\n2 cm lengkuas\n1/2 sdt merica butiran\n2 sdt garam",
+        "resep": "Siangi ikan mas hingga bersih. Cuci hingga tidak ada bercak darah. Sayat sedikit kedua sisi badan ikan mas.\nPerciki seluruh badan ikan dengan air jeruk nipis hingga rata. Sisihkan.\nTumis bumbu halus hingga wangi.\nMasukkan daun jeruk, daun salam, daun kunyit dan serai, aduk hingga layu.\nTuangi santan encer.\nMasukkan asam kandiis dan didihkan.\nMasukkan ikan mas, Didihkan beberapa saat.\nTuangi santan kental, didihkan kembali hingga kuah kental.\nAngkat, sajikan."
     },
     {
         "index": 5,
         "nama": "Gulai Tambusu",
-        "bahan": "Description for Label 3",
-        "resep": "Another description for Label 3"
+        "foto": "gulai_tambusu",
+        "bahan": "1 kg usus sapi\n5 butir telur ayam\n5 butir telur bebek (agar adonan agak keras)\n2 butir kelapa (buat santan kental sekitar 1 liter)\nBumbu:\nuntuk bahan pengisi usus:\n2 butir bawang merah\n2 siung bawang putih\n1 sdt cabe merah giling\n1 sdm kemiri giling\nGaram secukupnya\nKuah (gulai):\n10 buah cabe merah\n6 butir bawang merah\n6 siung bawang putih\n4 butir kemiri\n1 kelingking (2 cm) lengkuas\n1 kelingking (2 cm) jahe\n1 kelingking (2 cm) kunyit\n2 sdt air asam jawa\n3 lembar daun jeruk nipis\n3 lembar daun salam\n1 lembar daun kunyit\nGaram secukupnya\nLada secukupnya",
+        "resep": "Cuci usus sapi (luar dan dalam) sampai bersih, usahakan jangan sampai robek. Buang bagian lemaknya. Ikat salah satu ujungnya.\nKocok telur ayam (putih dan kuning), campur dengan bumbu dan santan secukupnya (sekitar 1 cangkir).\nIsikan adonan telur+santan ke dalam usus sapi. Jangan terlalu penuh karena telur akan mengembang dan usus akan pecah bila terlalu padat diisi. Ikat ujung yang lain.\nRebus air hingga mendidih, masukkan usus sapi yang telah berisi adonan telur. Rebus sampai matang. Aduk-aduk selama memasak agar kematangan rata. Bila tidak diaduk, besar kemungkinan usus akan besar sebelah ketika matang.\nMasak santan sampai berminyak.\nKecuali daun salam, daun jeruk, dan daun kunyit, uleg semua bumbu sampai halus.\nDi panci lain, tumis bumbu halus.\nMasukkan daun jeruk dan daun kunyit, kemudian masukkan ke dalam santan kental.\nDengan api kecil, masak sampai santannya mengental. Bila terlalu kental, dapat ditambah air mendidih.\nTambusu yang sudah matang dipotong sekitar 8 sentimeter, kemudian masukkan ke dalam kuah kental ini dan dimasak selama 5 menit."
     },{
         "index": 6,
         "nama": "Gulai Tunjang",
-        "bahan": "Description for Label 1",
-        "resep": "Another description for Label 1"
+        "foto": "gulai_tunjang",
+        "bahan": "1 kg kikil sapi, cuci, potong-potong\n2 liter air\n4 sdm minyak sayur\n2 lembar daun jeruk\n2 lembar daun kunyit, ikat\n2 batang serai, memarkan\n2 buah asam kandis\n1 liter santan encer\n500 ml santan kental\n1 sdt gula pasir\nBumbu Halus:\n12 butir bawang merah\n8 siung bawang putih\n7 buah cabe merah besar\n10 buah cabe merah keriting\n6 butir kemiri sangrai\n3 cm lengkuas\n3 cm kunyit\n2 cm jahe\n1 sdt merica butiran\n1 sdt ketumbar\n2 butir kapulaga\n2 sdt garam",
+        "resep": "Didihkan air dalam panci. Rebus kikil hingga empuk. Angkat dan sisihkan.\nPanaskan minyak, tumis Bumbu Halus hingga harum.\nMasukkan kikil, daun kunyit, daun jeruk, serai dan asam. Aduk rata. Tuangkan santan encer lalu aduk rata. Masak dengan api kecil hingga mendidih dan bumbu menyerap.\nTuangkan santan kental. didihkan sambil aduk sekali-sekali hingga kuah kental berminyak, angkat.\nSajikan hangat."
     },
     {
         "index": 7,
         "nama": "Telor Balado",
-        "bahan": "Description for Label 2",
-        "resep": "Another description for Label 2"
+        "foto": "telur_balado",
+        "bahan": "6 butir telur ayam\nminyak goreng\n2 lembar daun jeruk purut\n1 sdm kaldu ayam/jamur\n1 buah jeruk nipis/limau\nBumbu:\n3 buah cabe merah besar\n5 buah cabe merah keriting\n5 buah cabe rawit merah\n5 butir bawang merah\n3 siung bawang putih\n1 sdt gula pasir\n2 sdt garam",
+        "resep": "Rebus telur hingga matang. Tiriskan dan rendam air dingin. Kupas kulit telur. Sisihkan.\nGoreng telur dalam minyak banyak hingga sedikit kecokelatan lalu tiriskan.\nBumbu: Giling bahan bumbu hingga agak halus.\nPanaskan 4 sdm dalam wajan, tumis Bumbu bersama daun jeruk hingga harum dan matang.\nTambahkan kaldu ayam dan air jeruk nipis, aduk rata.\nMasukkan telur rebus yang sudah digoreng, masak beberapa saat lalu angkat.\nSajikan hangat."
     },
     {
         "index": 8,
         "nama": "Telor Dadar",
-        "bahan": "Description for Label 3",
-        "resep": "Another description for Label 3"
+        "foto": "telur_dadar",
+        "bahan": "10 butir telur ayam\n7 batang daun bawang, iris halus\n3 lembar daun kunyit muda, iris halus\n10 buah cabe merah keriting, iris halus\n5 lembar daun jeruk, iris halus\n2 sdt garam halus\n1 sdt merica bubuk\n1 sdt kaldu ayam bubuk\n2 sdm tepung terigu",
+        "resep": "Kocok terur jadi satu dalam wadah hingga berbuih halus.\nDalam wadah terpisah, campur jadi satu daun bawang, daun kunyit muda iris, cabe iris, daun jeruk iris, garam, lada, bumbu kaldu dan tepung terigu. Aduk hingga tercampur rata.\nMasukkan telur kocok, aduk-aduk hingga seluruhnya tercampur rata.\nSiapkan wajan, panaskan minyak goreng secukupnya.\nTuangkan adonan telur lalu kecilkan api. Masak hingga bagian pinggirnya mengeras dan bagian tengahnya matang.\nDengan bantuan tutup panci atau piring datar, balikkan telur dan masak kembali hingga seluruhnya kering dan matang.\nAngkat, potong-potong dan sajikan hangat."
     }
 ]
 

@@ -44,7 +44,6 @@ class ImageFragment : Fragment() {
             alert.setNegativeButton("TIDAK", DialogInterface.OnClickListener { dialog, which ->
                 null
             })
-
             alert.create().show()
         }
     }

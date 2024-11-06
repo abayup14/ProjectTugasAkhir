@@ -9,11 +9,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.navigation.Navigation
 import com.example.projecttugasakhir.databinding.FragmentResultBinding
 import com.example.projecttugasakhir.ml.ModelPadang
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.squareup.picasso.Picasso
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
@@ -40,23 +42,35 @@ class ResultFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         loadData()
-
         if (arguments != null) {
             bitmap_img = ResultFragmentArgs.fromBundle(requireArguments()).img
-            binding.imgFood.setImageBitmap(bitmap_img)
         }
 
         val array_prediction = classifyImage(bitmap_img)
-
         val maxIndex = array_prediction.indices.maxByOrNull { array_prediction[it] } ?: -1
         if (maxIndex >= 0) {
             val predictedLabel = labels[maxIndex]
             binding.txtNamaMakanan.text = predictedLabel.nama
-            binding.txtBahanMakanan.text = predictedLabel.bahan
-            binding.txtResepMakanan.text = predictedLabel.resep
+            val drawableId = resources.getIdentifier(predictedLabel.foto,
+                "drawable",
+                requireActivity().application.packageName)
+            Picasso.get()
+                .load(drawableId)
+                .into(binding.imgFood)
+            val bahan = "Bahan:\n" + predictedLabel.bahan
+            val resep = "Resep:\n" + predictedLabel.resep
+            binding.txtBahanMakanan.text = bahan
+            binding.txtResepMakanan.text = resep
             Log.d("ResultFragment", "Predicted label: ${predictedLabel.nama}")
+        } else {
+            val alert = AlertDialog.Builder(requireContext())
+            alert.setTitle("Informasi")
+            alert.setMessage("Tidak dapat melakukan prediksi. Coba ambil foto dari kamera atau galeri.")
+            alert.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
+                val action = ResultFragmentDirections.actionHome()
+                Navigation.findNavController(requireView()).navigate(action)
+            })
         }
 
         binding.btnThreeBest.setOnClickListener {

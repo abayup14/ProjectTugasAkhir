@@ -28,8 +28,8 @@
 
         <ImageView
             android:id="@+id/imgSelect"
-            android:layout_width="312dp"
-            android:layout_height="227dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
             android:layout_marginTop="72dp"
             android:src="@drawable/ic_launcher_foreground"
             app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
             android:id="@+id/btnSelect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="48dp"
             android:text="Pilih Foto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

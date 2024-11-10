@@ -48,9 +48,11 @@ class ResultFragment : Fragment() {
         }
 
         val array_prediction = classifyImage(bitmap_img)
+
         val maxIndex = array_prediction.indices.maxByOrNull { array_prediction[it] } ?: -1
         if (maxIndex >= 0) {
             val predictedLabel = labels[maxIndex]
+
             binding.txtNamaMakanan.text = predictedLabel.nama
             val drawableId = resources.getIdentifier(predictedLabel.foto,
                 "drawable",
@@ -62,6 +64,7 @@ class ResultFragment : Fragment() {
             val resep = "Resep:\n" + predictedLabel.resep
             binding.txtBahanMakanan.text = bahan
             binding.txtResepMakanan.text = resep
+
             Log.d("ResultFragment", "Predicted label: ${predictedLabel.nama}")
         } else {
             val alert = AlertDialog.Builder(requireContext())
@@ -71,6 +74,7 @@ class ResultFragment : Fragment() {
                 val action = ResultFragmentDirections.actionHome()
                 Navigation.findNavController(requireView()).navigate(action)
             })
+            alert.create().show()
         }
 
         binding.btnThreeBest.setOnClickListener {
@@ -87,7 +91,6 @@ class ResultFragment : Fragment() {
             alertPrediksi.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
                 null
             })
-
             alertPrediksi.create().show()
         }
     }
